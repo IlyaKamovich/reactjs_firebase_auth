@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+@mixin flex-center-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.signup__link,
+.login__link,
+.reset__link {
+  float: right;
+  margin-bottom: 11px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+
+  &:visited {
+    color: #3f51b5;
+  }
+}
+
+.login__container,
+.loading__container,
+.signup__container,
+.reset__container,
+.home__container {
+  @include flex-center-column();
+  height: 100vh;
+}
+
+.reset__container {
+  form {
+    width: 70vw;
+  }
+}
+
+.login__container {
+  form {
+    width: 70vw;
+    min-height: 60vh;
+
+    .login__title {
+      font-size: 5vw;
+    }
+
+    input {
+      width: 100%;
+    }
+
+    .login__progress,
+    .login__error {
+      @include flex-center-column();
+      margin-top: 25px;
+      width: 100%;
+    }
+
+    button {
+      height: 40px;
+    }
+  }
+}
+
+.home__container {
+  main {
+    @include flex-center-column();
+    width: 70vw;
+    min-height: 60vh;
+
+    p {
+      width: 100%;
+    }
+
+    button {
+      margin-top: 15px;
+      height: 40px;
+    }
+  }
+}
+
+.signup__loading__box,
+.stepper {
+  @include flex-center-column();
+  width: 100%;
+}
+
+.first__step_container,
+.second__step_container,
+.reset__error__box {
+  width: 70vw;
+}
+
+.reset__error__box {
+  margin-top: 20px;
+}
+
+.error__message {
+  margin-top: 15px;
+}
+
+.next__button,
+.prev__button,
+.reset__button {
+  height: 40px;
+}
+
+.text {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.error_text {
+  text-align: center;
+}
+
+@media (max-width: 550px) {
+  .login__title {
+    text-align: center;
+  }
+}
